@@ -20,6 +20,6 @@ $etternavn = htmlspecialchars($_POST['etternavn'] ?? '');
     <p>Du må fylle ut både fornavn og etternavn.</p>
   <?php endif; ?>
 
-  <p><a href="../../html.eksempel1">Tilbake til skjema</a></p>
+  <p><a href="html.eksempel1">Tilbake til skjema</a></p>
 </body>
 </html>
