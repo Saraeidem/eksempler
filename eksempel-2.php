@@ -1,19 +1,10 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-$fornavn   = $_POST['fornavn']   ?? '';
-$etternavn = $_POST['etternavn'] ?? '';
+<?php /* Oppgave 2 */
+/*
+/* Programmet mottar fra et HTML-skjema et navn og en alder ved POST-metoden
+/* Programmet skriver ut en "god dag"-melding med personens navn og alder
+*/
+$fornavn=$_POST ["fornavn"];
+$etternavn=$_POST ["etternavn"];
+$alder=$_POST ["alder"]; /* variable gitt verdier fra feltene i HTML-skjemaet */
+print ("God dag $fornavn $etternavn, du er $alder &aring;r og like sprek. <br />"); /* resultat skrevet ut */
 ?>
-<!DOCTYPE html>
-<html lang="no">
-<head><meta charset="UTF-8"><title>God dag</title></head>
-<body>
-  <?php if ($fornavn && $etternavn): ?>
-    <p>God dag <?php echo htmlspecialchars($fornavn).' '.htmlspecialchars($etternavn); ?></p>
-  <?php else: ?>
-    <p>Du må fylle ut både fornavn og etternavn.</p>
-  <?php endif; ?>
-  <p><a href="index.html">Tilbake</a></p>
-</body>
-</html>
