@@ -1,23 +1,19 @@
 <?php
-// Sjekk om skjemaet er sendt inn
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Hent verdiene fra skjemaet
-    $tall1 = $_POST["tall1"];
-    $tall2 = $_POST["tall2"];
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-    // Beregninger
-    $sum = $tall1 + $tall2;
-    $diff = $tall1 - $tall2;
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $tall1 = (float)($_POST['tall1'] ?? 0);
+    $tall2 = (float)($_POST['tall2'] ?? 0);
 
-    // Utskrift
-    echo "Tall 1 er $tall1 <br>";
-    echo "Tall 2 er $tall2 <br>";
-    echo "Summen er $sum <br>";
-    echo "Differansen er $diff <br><br>";
+    $sum = $tall1 + $tall2; // ← semikolon her!
+    $differanse = $tall1 - $tall2;
 
-    // Lenke tilbake til skjemaet
+    echo "Tall 1 er $tall1<br>";
+    echo "Tall 2 er $tall2<br>";
+    echo "Summen er $sum<br>";
+    echo "Differansen er $differanse<br><br>";
     echo '<a href="0103.html">Tilbake til skjemaet</a>';
 } else {
-    echo "Ingen data mottatt.";
+    header('Location: 0103.html'); exit;
 }
-?>
