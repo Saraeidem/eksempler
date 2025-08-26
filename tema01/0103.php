@@ -1,17 +1,23 @@
-<?php    /* Eksempel 3 */
-/*
-/*    Programmet mottar 2 tall fra et HTML-skjema ved POST-metoden
-/*    Programmet skriver ut de 2 tallene og summen og differansen av/mellom tallene
-*/
-  $tall1=$_POST ["tall1"];
-  $tall2=$_POST ["tall2"];  /* variable gitt verdier fra feltene i HTML-skjemaet */
-	
-  $sum=$tall1 + $tall2   /* beregning av summen utført  */
-  $differanse=$tall1 - $tall2;  /* beregning av differansen utført  */
-			
-  print ("Tall 1 er $tall1 <br />");
-  print ("Tall 2 er $tall2 <br />");
-  print ("<br />");
-  print ("Summen er $sum <br />");
-  print ("Differansen er $differanse <br />");  /* resultater skrevet ut  */
+<?php
+// Sjekk om skjemaet er sendt inn
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Hent verdiene fra skjemaet
+    $tall1 = $_POST["tall1"];
+    $tall2 = $_POST["tall2"];
+
+    // Beregninger
+    $sum = $tall1 + $tall2;
+    $diff = $tall1 - $tall2;
+
+    // Utskrift
+    echo "Tall 1 er $tall1 <br>";
+    echo "Tall 2 er $tall2 <br>";
+    echo "Summen er $sum <br>";
+    echo "Differansen er $diff <br><br>";
+
+    // Lenke tilbake til skjemaet
+    echo '<a href="0103.html">Tilbake til skjemaet</a>';
+} else {
+    echo "Ingen data mottatt.";
+}
 ?>
