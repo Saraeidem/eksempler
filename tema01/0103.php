@@ -1,19 +1,17 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $tall1 = (float)($_POST['tall1'] ?? 0);
-    $tall2 = (float)($_POST['tall2'] ?? 0);
-
-    $sum = $tall1 + $tall2; // ← semikolon her!
-    $differanse = $tall1 - $tall2;
-
-    echo "Tall 1 er $tall1<br>";
-    echo "Tall 2 er $tall2<br>";
-    echo "Summen er $sum<br>";
-    echo "Differansen er $differanse<br><br>";
-    echo '<a href="0103.html">Tilbake til skjemaet</a>';
-} else {
-    header('Location: 0103.html'); exit;
-}
+<?php    /* Eksempel 3 */
+/*
+/*    Programmet mottar 2 tall fra et HTML-skjema ved POST-metoden
+/*    Programmet skriver ut de 2 tallene og summen og differansen av/mellom tallene
+*/
+  $tall1=$_POST ["tall1"];
+  $tall2=$_POST ["tall2"];  /* variable gitt verdier fra feltene i HTML-skjemaet */
+	
+  $sum=$tall1 + $tall2   /* beregning av summen utført  */
+  $differanse=$tall1 - $tall2;  /* beregning av differansen utført  */
+			
+  print ("Tall 1 er $tall1 <br />");
+  print ("Tall 2 er $tall2 <br />");
+  print ("<br />");
+  print ("Summen er $sum <br />");
+  print ("Differansen er $differanse <br />");  /* resultater skrevet ut  */
+?>
