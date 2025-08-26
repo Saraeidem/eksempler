@@ -1,20 +1,16 @@
 <!DOCTYPE html>
-<html lang="no">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Oppgave 4</title>
+    <title>Eksempel 4</title>
 </head>
 <body>
-  <h2>Skriv inn to tall</h2>
-  <form action="0104.php" method="post">
-    <label for="tall1">Tall 1:</label>
-    <input type="number" id="tall1" name="tall1" required step="any"><br><br>
+    <h3>Eksempel 4</h3>
 
-    <label for="tall2">Tall 2:</label>
-    <input type="number" id="tall2" name="tall2" required step="any"><br><br>
-
-    <input type="submit" value="Fortsett">
-    <input type="reset" value="Nullstill">
-  </form>
+    <form method="post" action="/tema01/0104.php" id="eksempel4" name="eksempel4">
+        Tall 1 <input type="text" id="tall1" name="tall1" required /> <br />
+        Tall 2 <input type="text" id="tall2" name="tall2" required /> <br />
+        <input type="submit" value="Fortsett" id="fortsett" name="fortsett" />
+        <input type="reset" value="Nullstill" name="nullstill" id="nullstill" /> <br />
+    </form>
 </body>
 </html>
